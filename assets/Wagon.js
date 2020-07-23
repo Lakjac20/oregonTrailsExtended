@@ -13,18 +13,19 @@ class Wagon {
         }
     }
     shouldQuarantine() {
-        for (let index = 0; index >= this.passengers.length; index += 1) {
-            if (index >= 1) {
+        for (let index = 0; index < this.passengers.length; index += 1) {
+            let currentPassenger = this.passengers[index]
+            if (currentPassenger.isHealthy === false) {
                 return true
-            } else {
-                return false
             }
         }
+        return false
     }
     totalFood() {
+        let amountOfFood = 0 
         for (let index = 0; index < this.passengers.length; index++) {
 
-            let amountOfFood = this.food + this.passengers[i]
+        amountOfFood = amountOfFood + this.passengers[index].food
         }
         return amountOfFood
     }
